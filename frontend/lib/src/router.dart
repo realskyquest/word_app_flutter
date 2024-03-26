@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-// Pages
-import 'pages/main.dart';
-import 'pages/about.dart';
+import 'routes/about.dart';
+import 'routes/index.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,12 +17,12 @@ class MyApp extends StatelessWidget {
           settings: routeSettings,
           builder: (BuildContext context) {
             switch (routeSettings.name) {
-              case MainPage.pageName:
-                return const MainPage();
-              case AboutPage.pageName:
-                return const AboutPage();
+              case IndexRoute.routeName:
+                return const IndexRoute();
+              case AboutRoute.routeName:
+                return const AboutRoute();
               default:
-                return const MainPage();
+                return const IndexRoute();
             }
           },
         );

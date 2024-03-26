@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class BottomNavigationBarProvider extends ChangeNotifier {
-  int _currentRoute = 0;
+class IndexRouteBottomNavigationBarState extends ChangeNotifier {
+  int _currentPage = 0;
 
-  int get currentRoute => _currentRoute;
+  int get currentPage => _currentPage;
 
-  void newRoute(int route) {
-    _currentRoute = route;
+  void newPage(int route) {
+    _currentPage = route;
     notifyListeners();
   }
 }
