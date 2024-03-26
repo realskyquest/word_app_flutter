@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net" modified="2024-03-24T10:36:37.710Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="OeHASbJuOUh0w0WIntc_" version="24.0.8" type="device">
+  <diagram name="Page-1" id="Tue5WLuotYkqSO0wwnAv">
+    <mxGraphModel dx="1386" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="46KpIcRmZpjFK7rovOcu-1" value="Index" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="400" height="760" as="geometry">
+            <mxRectangle x="40" y="40" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-4" value="" style="swimlane;startSize=0;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-1">
+          <mxGeometry y="660" width="400" height="100" as="geometry">
+            <mxRectangle y="660" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-5" value="Make word!" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-4">
+          <mxGeometry x="30" y="10" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-6" value="History" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-4">
+          <mxGeometry x="160" y="10" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-7" value="Manage word" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-4">
+          <mxGeometry x="280" y="10" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-14" value="" style="swimlane;startSize=0;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-1">
+          <mxGeometry y="30" width="400" height="50" as="geometry">
+            <mxRectangle x="320" y="280" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-15" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Word app&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-14">
+          <mxGeometry x="150" y="10" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-17" value="Account" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-14">
+          <mxGeometry x="320" y="10" width="65" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-18" value="Pages" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-1">
+          <mxGeometry x="140" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-8" value="Make word!" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="140" width="400" height="640" as="geometry">
+            <mxRectangle x="480" y="40" width="100" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-10" value="" style="swimlane;startSize=0;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-8">
+          <mxGeometry x="100" y="220" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-11" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Make word&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-10">
+          <mxGeometry x="55" y="30" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-12" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-10">
+          <mxGeometry x="40" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-13" value="Next word!" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="46KpIcRmZpjFK7rovOcu-10">
+          <mxGeometry x="50" y="140" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="46KpIcRmZpjFK7rovOcu-19" target="46KpIcRmZpjFK7rovOcu-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="46KpIcRmZpjFK7rovOcu-19" value="Pages" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
