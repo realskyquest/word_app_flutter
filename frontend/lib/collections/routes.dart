@@ -6,8 +6,7 @@ import 'package:word_app/pages/root/root_app.dart';
 import 'package:word_app/pages/add.dart';
 import 'package:word_app/pages/history.dart';
 import 'package:word_app/pages/saved.dart';
-
-//import 'package:word_app/pages/details.dart';
+import 'package:word_app/pages/account.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -50,6 +49,14 @@ final GoRouter router = GoRouter(
           ),
         ),
       ],
+    ),
+    GoRoute(
+      path: '/account',
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const AccountPage(),
+      ),
     ),
   ],
 );

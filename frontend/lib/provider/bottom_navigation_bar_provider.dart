@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-//import 'package:flutter/material.dart';
-//import 'package:go_router/go_router.dart';
-
 class BottomNavigationBarProvider with ChangeNotifier, DiagnosticableTreeMixin {
   int _index = 0;
 
@@ -14,15 +11,7 @@ class BottomNavigationBarProvider with ChangeNotifier, DiagnosticableTreeMixin {
   void link(int index2, rootPaths, BuildContext context) {
     final invertedRouteMap =
         rootPaths.map((key, value) => MapEntry(value, key));
-
-    // if (index2 == 0) {
-    //   GoRouter.of(context).go(invertedRouteMap[index2]!);
-    // } else {
-    //   if (_index != index2) {
-    //     GoRouter.of(context).push(invertedRouteMap[index2]!);
-    //   }
-    // }
-
+    
     // Initial location
     if (_index == 0) {
       // Can't push initial page to initial location
@@ -31,11 +20,13 @@ class BottomNavigationBarProvider with ChangeNotifier, DiagnosticableTreeMixin {
       }
     } else {
       // We are not in the initial location AKA, we moved some other page already
-      // Push to initial location and current location is not allowed
+      /*
+        When index2 is 0, go is used,
+        if not, replace is used 
+      */
       if (index2 == 0) {
         GoRouter.of(context).go(invertedRouteMap[index2]!);
       } else {
-
         GoRouter.of(context).replace(invertedRouteMap[index2]!);
       }
     }
@@ -66,6 +57,7 @@ class BottomNavigationBarProvider with ChangeNotifier, DiagnosticableTreeMixin {
     return _index;
   }
 
+  // Take care of later
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
