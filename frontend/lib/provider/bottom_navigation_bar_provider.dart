@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 class BottomNavigationBarProvider with ChangeNotifier, DiagnosticableTreeMixin {
   int _index = 0;
 
-  get index => _index;
+  int get index => _index;
 
   void link(int index2, rootPaths, BuildContext context) {
     final invertedRouteMap =
