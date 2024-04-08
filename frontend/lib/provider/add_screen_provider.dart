@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class AddPageProvider with ChangeNotifier, DiagnosticableTreeMixin {
+class AddScreenProvider with ChangeNotifier, DiagnosticableTreeMixin {
   String _word = '';
 
   String get word => _word;

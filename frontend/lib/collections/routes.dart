@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:word_app/pages/root/root_app.dart';
 
-import 'package:word_app/pages/add.dart';
-import 'package:word_app/pages/history.dart';
-import 'package:word_app/pages/saved.dart';
+import 'package:word_app/pages/add_screen.dart';
+import 'package:word_app/pages/history_screen.dart';
+import 'package:word_app/pages/saved_screen.dart';
 import 'package:word_app/pages/account/account.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -29,7 +29,7 @@ final GoRouter router = GoRouter(
           pageBuilder: (BuildContext context, GoRouterState state) =>
               NoTransitionPage<void>(
             key: state.pageKey,
-            child: const AddPage(),
+            child: const AddScreen(),
           ),
         ),
         GoRoute(
@@ -37,7 +37,7 @@ final GoRouter router = GoRouter(
           pageBuilder: (BuildContext context, GoRouterState state) =>
               NoTransitionPage<void>(
             key: state.pageKey,
-            child: const HistoryPage(),
+            child: const HistoryScreen(),
           ),
         ),
         GoRoute(
@@ -45,7 +45,7 @@ final GoRouter router = GoRouter(
           pageBuilder: (BuildContext context, GoRouterState state) =>
               NoTransitionPage<void>(
             key: state.pageKey,
-            child: const SavedPage(),
+            child: const SavedScreen(),
           ),
         ),
       ],

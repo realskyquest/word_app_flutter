@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
 import 'package:english_words/english_words.dart';
+import 'package:word_app/components/add_screen_word_display.dart';
+import 'package:word_app/models/saves.dart';
 
 import 'package:provider/provider.dart';
 import 'package:word_app/provider/theme_provider.dart';
-import 'package:word_app/provider/add_page_provider.dart';
-import 'package:word_app/provider/history_page_provider.dart';
-import 'package:word_app/provider/saved_page_provider.dart';
+import 'package:word_app/provider/add_screen_provider.dart';
+import 'package:word_app/provider/history_screen_provider.dart';
+import 'package:word_app/provider/saved_screen_provider.dart';
 
-class AddPage extends StatelessWidget {
-  const AddPage({super.key});
+class AddScreen extends StatelessWidget {
+  const AddScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final ColorScheme appColors =
         context.watch<ThemeProvider>().appTheme.colorScheme;
 
-    final wordProvider = context.watch<AddPageProvider>();
+    final wordProvider = context.watch<AddScreenProvider>();
 
     final ListTile listTile = ListTile(
       leading: Icon(
@@ -48,8 +51,8 @@ class AddPage extends StatelessWidget {
           onPressed: () {
             final String newWord = WordPair.random(safeOnly: true).first;
             wordProvider.setWord(newWord);
-            context.read<AddPageProvider>().setWord(newWord);
-            context.read<HistoryPageProvider>().addWord(newWord);
+            context.read<AddScreenProvider>().setWord(newWord);
+            context.read<HistoryScreenProvider>().addWord(newWord);
           },
           style: ButtonStyle(
             backgroundColor:
@@ -67,7 +70,11 @@ class AddPage extends StatelessWidget {
         TextButton(
           onPressed: () {
             if (wordProvider.word != '') {
-              context.read<SavedPageProvider>().addWord(wordProvider.word);
+              final SavesModel newSave = SavesModel(
+                id: DateTime.now().toString(),
+                word: wordProvider.word,
+              );
+              context.read<SavedScreenProvider>().addSave(newSave);
             }
           },
           child: Text(
@@ -89,40 +96,12 @@ class AddPage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               listTile,
-              const AddPageWordDisplay(),
+              AddScreenWordDisplay(word: wordProvider.word),
               const Gap(5),
               buttons,
               const Gap(5),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class AddPageWordDisplay extends StatelessWidget {
-  const AddPageWordDisplay({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final ColorScheme appColors =
-        context.watch<ThemeProvider>().appTheme.colorScheme;
-    final String word = context.watch<AddPageProvider>().word;
-
-    return Container(
-      margin: const EdgeInsets.only(left: 40, right: 40, bottom: 10),
-      decoration: BoxDecoration(
-        color: appColors.onSurfaceVariant,
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
-      ),
-      child: Center(
-        child: Text(
-          style: TextStyle(
-            fontSize: 20,
-            color: appColors.surface,
-          ),
-          word,
         ),
       ),
     );
