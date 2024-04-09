@@ -70,8 +70,15 @@ class AddScreen extends StatelessWidget {
         TextButton(
           onPressed: () {
             if (wordProvider.word != '') {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                    content: Text("New word added, ${wordProvider.word}"),
+                    duration: const Duration(milliseconds: 500),
+                    action: SnackBarAction(label: 'Close', onPressed: () {})),
+              );
+
               final SavesModel newSave = SavesModel(
-                id: DateTime.now().toString(),
+                id: DateTime.now().toUtc().toString(),
                 word: wordProvider.word,
               );
               context.read<SavedScreenProvider>().addSave(newSave);

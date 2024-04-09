@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
+import 'package:gap/gap.dart';
 
 import 'package:word_app/components/save_list_item.dart';
 import 'package:word_app/models/saves.dart';
@@ -16,7 +17,8 @@ class SavedScreen extends StatelessWidget {
 
     return Scaffold(
       body: Consumer<SavedScreenProvider>(
-        builder: (BuildContext context, SavedScreenProvider savedScreenProvider, Widget? child) {
+        builder: (BuildContext context, SavedScreenProvider savedScreenProvider,
+            Widget? child) {
           if (savedScreenProvider.saves.isNotEmpty) {
             return _SavedScreenListView(controller: semicircleController);
           } else {
@@ -46,13 +48,14 @@ class _SavedScreenListView extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemCount: list.length,
         itemBuilder: (context, index) {
-          String id = list.reversed.toList()[index].id;
-          String value = list.reversed.toList()[index].word;
-          return SaveListItem(
-            id: id,
-            value: value,
-            length: list.length,
-            index: index,
+          return Container(
+            margin: const EdgeInsets.only(left: 6, right: 34),
+            child: SaveListItem(
+              id: list.reversed.toList()[index].id,
+              value: list.reversed.toList()[index].word,
+              length: list.length,
+              index: index,
+            ),
           );
         },
       ),

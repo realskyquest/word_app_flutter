@@ -40,13 +40,14 @@ class SaveListItem extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text("Saved word deleted, $value"),
-              duration: const Duration(seconds: 1),
+              duration: const Duration(milliseconds: 500),
+              action: SnackBarAction(label: 'Close', onPressed: () {})
             ),
           );
         },
         child: Container(
           decoration: decoration,
-          margin: const EdgeInsets.all(4),
+          margin: const EdgeInsets.only(top: 4, bottom: 4),
           child: Column(
             children: [
               const Gap(5),

@@ -22,8 +22,8 @@ class RootApp extends StatelessWidget {
         .watch<BottomNavigationBarProvider>()
         .currentRouteIndex(rootAppPaths, context);
 
-    final Text rootAppTitle =
-        Text(style: TextStyle(color: appColors.onTertiaryContainer), 'Word App');
+    final Text rootAppTitle = Text(
+        style: TextStyle(color: appColors.onTertiaryContainer), 'Word App');
 
     final List<Widget> rootAppActions = <Widget>[
       IconButton(

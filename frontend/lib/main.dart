@@ -2,8 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'collections/routes.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
+import 'package:provider/provider.dart';
 
 import 'provider/theme_provider.dart';
 import 'provider/bottom_navigation_bar_provider.dart';
@@ -11,7 +11,7 @@ import 'provider/add_screen_provider.dart';
 import 'provider/history_screen_provider.dart';
 import 'provider/saved_screen_provider.dart';
 
-Future<void> main() async {
+main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   if (Platform.isAndroid) {

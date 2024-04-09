@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
+import 'package:gap/gap.dart';
 
 import 'package:word_app/components/history_list_item.dart';
 
@@ -15,7 +16,8 @@ class HistoryScreen extends StatelessWidget {
 
     return Scaffold(
       body: Consumer<HistoryScreenProvider>(
-        builder: (BuildContext context, HistoryScreenProvider historyScreenProvider, Widget? child) {
+        builder: (BuildContext context,
+            HistoryScreenProvider historyScreenProvider, Widget? child) {
           if (historyScreenProvider.list.isNotEmpty) {
             return _HistoryScreenListView(controller: semicircleController);
           } else {
@@ -48,8 +50,7 @@ class _HistoryScreenListView extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemCount: list.length,
         itemBuilder: (context, index) {
-          String value = list[index];
-          return HistoryListItem(value: value);
+          return HistoryListItem(value: list[index]);
         },
       ),
     );

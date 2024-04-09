@@ -43,6 +43,9 @@ dependencies:
   gap: ^3.0.1
   draggable_scrollbar: ^0.1.0
   pocketbase: ^0.18.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.2
 
 dev_dependencies:
   flutter_test:
