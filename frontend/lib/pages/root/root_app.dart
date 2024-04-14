@@ -3,6 +3,7 @@ import 'package:word_app/components/curved_bottom_navigation_bar.dart';
 import 'package:gap/gap.dart';
 
 import 'package:go_router/go_router.dart';
+
 import 'package:provider/provider.dart';
 import 'package:word_app/provider/theme_provider.dart';
 import 'package:word_app/provider/bottom_navigation_bar_provider.dart';

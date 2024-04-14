@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
-import 'package:gap/gap.dart';
 
 import 'package:word_app/components/history_list_item.dart';
 

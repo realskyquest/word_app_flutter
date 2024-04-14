@@ -35,15 +35,15 @@ class SaveListItem extends StatelessWidget {
       child: Dismissible(
         key: Key(id),
         onDismissed: (direction) {
-          context.read<SavedScreenProvider>().removeSave(length - 1 - index);
-
+          ScaffoldMessenger.of(context).removeCurrentSnackBar();
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text("Saved word deleted, $value"),
-              duration: const Duration(milliseconds: 500),
-              action: SnackBarAction(label: 'Close', onPressed: () {})
+              content: Text("Saved word removed, $value"),
+              showCloseIcon: true,
             ),
           );
+          
+          context.read<SavedScreenProvider>().removeSave(length - 1 - index);
         },
         child: Container(
           decoration: decoration,
