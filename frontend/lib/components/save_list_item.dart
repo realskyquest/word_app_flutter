@@ -50,12 +50,12 @@ class SaveListItem extends StatelessWidget {
           margin: const EdgeInsets.only(top: 4, bottom: 4),
           child: Column(
             children: [
-              const Gap(5),
+              const Gap(12),
               Text(
                 style: TextStyle(color: appColors.onSurfaceVariant),
                 value,
               ),
-              const Gap(5),
+              const Gap(12),
             ],
           ),
         ),

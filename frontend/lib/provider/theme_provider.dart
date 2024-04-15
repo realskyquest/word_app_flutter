@@ -14,7 +14,7 @@ final ThemeData appDarkTheme = ThemeData(
 late bool initialAppDarkMode;
 
 class ThemeProvider with ChangeNotifier, DiagnosticableTreeMixin {
-  ThemeData _appTheme = appLightTheme;
+  ThemeData _appTheme = (initialAppDarkMode == true ? appDarkTheme : appLightTheme);
   bool _appDarkMode = initialAppDarkMode;
 
   ThemeData get appTheme => _appTheme;

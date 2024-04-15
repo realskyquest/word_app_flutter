@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:pocketbase/pocketbase.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'collections/routes.dart';
 import 'package:word_app/models/saves.dart';
 
+import 'package:provider/provider.dart';
 import 'provider/theme_provider.dart';
 import 'provider/bottom_navigation_bar_provider.dart';
 import 'provider/add_screen_provider.dart';
@@ -33,6 +34,19 @@ void main() async {
     var box2 = await Hive.openBox('saves');
     List<dynamic> saves = await box2.get('list', defaultValue: []);
     initialSaves = saves.cast<SavesModel>();
+
+    // final pb = PocketBase('http://10.0.2.2:8090/');
+
+    // final body = <String, dynamic>{
+    //   "username": "Bob",
+    //   "email": "bob@example.com",
+    //   "password": "12345678",
+    //   "passwordConfirm": "12345678",
+    //   "name": "Bob Smith"
+    // };
+
+    // final record = await pb.collection('users').create(body: body);
+    // print(record);
   }
   runApp(
     MultiProvider(
