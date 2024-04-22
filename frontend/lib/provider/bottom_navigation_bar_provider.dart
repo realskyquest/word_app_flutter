@@ -8,9 +8,9 @@ class BottomNavigationBarProvider with ChangeNotifier, DiagnosticableTreeMixin {
 
   int get index => _index;
 
-  void link(int index2, rootPaths, BuildContext context) {
+  void link(int index2, Map<String, int> paths, BuildContext context) {
     final invertedRouteMap =
-        rootPaths.map((key, value) => MapEntry(value, key));
+        paths.map((key, value) => MapEntry(value, key));
     
     // Initial location
     if (_index == 0) {
@@ -36,22 +36,22 @@ class BottomNavigationBarProvider with ChangeNotifier, DiagnosticableTreeMixin {
   }
 
   // Uses the currentRouteIndex and returns the current route as a string
-  String currentRouteString(rootPaths, context) {
+  String currentRouteString(paths, context) {
     final invertedRouteMap =
-        rootPaths.map((key, value) => MapEntry(value, key));
-    final index2 = currentRouteIndex(rootPaths, context);
+        paths.map((key, value) => MapEntry(value, key));
+    final index2 = currentRouteIndex(paths, context);
 
     return invertedRouteMap[index2]!;
   }
 
   // Checks the router for current route and updates the _index and returns the index
-  int currentRouteIndex(rootPaths, BuildContext context) {
+  int currentRouteIndex(paths, BuildContext context) {
     final invertedRouteMap =
-        rootPaths.map((key, value) => MapEntry(value, key));
+        paths.map((key, value) => MapEntry(value, key));
     final String location = GoRouterState.of(context).uri.toString();
 
     if (invertedRouteMap.values.contains(location)) {
-      _index = rootPaths[location]!;
+      _index = paths[location]!;
     }
 
     return _index;

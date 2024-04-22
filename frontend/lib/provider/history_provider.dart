@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class HistoryScreenProvider with ChangeNotifier, DiagnosticableTreeMixin {
+class HistoryProvider with ChangeNotifier, DiagnosticableTreeMixin {
   final List<String> _list = <String>[];
 
   List<String> get list => _list;

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:word_app/themes/theme.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:word_app/utils/logger.dart';
 
 final ThemeData appLightTheme = ThemeData(
     useMaterial3: true,
@@ -31,6 +32,8 @@ class ThemeProvider with ChangeNotifier, DiagnosticableTreeMixin {
 
     var box = await Hive.openBox('theme');
     await box.put('mode', mode);
+
+    logger.i('Changed theme mode to ${mode == true ? 'dark' : 'light'}');
 
     notifyListeners();
   }

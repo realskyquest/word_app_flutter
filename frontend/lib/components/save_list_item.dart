@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 
 import 'package:provider/provider.dart';
 import 'package:word_app/provider/theme_provider.dart';
-import 'package:word_app/provider/saved_screen_provider.dart';
+import 'package:word_app/provider/saves_provider.dart';
 
 class SaveListItem extends StatelessWidget {
   const SaveListItem({
@@ -21,8 +21,7 @@ class SaveListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme appColors =
-        context.watch<ThemeProvider>().appTheme.colorScheme;
+    final ColorScheme appColors = context.watch<ThemeProvider>().appTheme.colorScheme;
 
     final BoxDecoration decoration = BoxDecoration(
       color: appColors.surfaceVariant,
@@ -42,8 +41,8 @@ class SaveListItem extends StatelessWidget {
               showCloseIcon: true,
             ),
           );
-          
-          context.read<SavedScreenProvider>().removeSave(length - 1 - index);
+
+          context.read<SavesProvider>().removeSave(length - 1 - index);
         },
         child: Container(
           decoration: decoration,

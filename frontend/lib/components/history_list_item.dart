@@ -13,27 +13,34 @@ class HistoryListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme appColors =
-        context.watch<ThemeProvider>().appTheme.colorScheme;
+    return Consumer<ThemeProvider>(
+      builder: (
+        BuildContext context,
+        ThemeProvider themeProvider,
+        Widget? child,
+      ) {
+        final ColorScheme appColors = themeProvider.appTheme.colorScheme;
 
-    final BoxDecoration decoration = BoxDecoration(
-      color: appColors.surfaceVariant,
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
-    );
+        final BoxDecoration decoration = BoxDecoration(
+          color: appColors.surfaceVariant,
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+        );
 
-    return InkWell(
-      onTapDown: (details) {},
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
-      child: Container(
-        decoration: decoration,
-        margin: const EdgeInsets.all(4),
-        child: Center(
-          child: Text(
-            style: TextStyle(color: appColors.onSurfaceVariant),
-            value,
+        return InkWell(
+          onTapDown: (details) {},
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          child: Container(
+            decoration: decoration,
+            margin: const EdgeInsets.all(4),
+            child: Center(
+              child: Text(
+                style: TextStyle(color: appColors.onSurfaceVariant),
+                value,
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
