@@ -1,4 +1,7 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="dev.pages.flutter_word_app__realskyquest">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:label="Word App"
         android:name="${applicationName}"
