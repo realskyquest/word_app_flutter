@@ -8,7 +8,7 @@ import 'package:word_app/routes/layout-main/history/page.dart';
 import 'package:word_app/routes/layout-main/saves/page.dart';
 
 import 'package:word_app/routes/layout-account/page.dart';
-
+import 'package:word_app/routes/layout-account/signup/page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -23,7 +23,9 @@ final GoRouter router = GoRouter(
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (BuildContext context, GoRouterState state, Widget child) {
-        return LayoutMain(page: child);
+        return LayoutMain(
+          slot: child,
+        );
       },
       routes: <RouteBase>[
         GoRoute(
@@ -54,25 +56,21 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/account',
+      parentNavigatorKey: _rootNavigatorKey,
       pageBuilder: (BuildContext context, GoRouterState state) =>
-          CustomTransitionPage<void>(
-              key: state.pageKey,
-              child: const AccountPage(),
-              transitionsBuilder: (BuildContext context,
-                      Animation<double> animation,
-                      Animation<double> secondaryAnimation,
-                      Widget child) =>
-                  SlideTransition(
-                    position: animation.drive(
-                      Tween<Offset>(
-                        begin: const Offset(0.0, 1.0),
-                        end: Offset.zero,
-                      ).chain(
-                        CurveTween(curve: Curves.ease),
-                      ),
-                    ),
-                    child: child,
-                  )),
+          NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const AccountPage(),
+      ),
+    ),
+    GoRoute(
+      path: '/signup',
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          NoTransitionPage<void>(
+        key: state.pageKey,
+        child: const SignupPage(),
+      ),
     ),
   ],
 );

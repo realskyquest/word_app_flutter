@@ -4,11 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:pocketbase/pocketbase.dart';
 
 import 'utils/logger.dart';
 import 'utils/router.dart';
-import 'utils/check_server.dart';
 import 'models/saves.dart';
 
 import 'package:provider/provider.dart';
@@ -18,6 +16,7 @@ import 'provider/bottom_navigation_bar_provider.dart';
 import 'provider/add_provider.dart';
 import 'provider/history_provider.dart';
 import 'provider/saves_provider.dart';
+import 'provider/account_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,6 +68,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => AddProvider()),
         ChangeNotifierProvider(create: (context) => HistoryProvider()),
         ChangeNotifierProvider(create: (context) => SavesProvider()),
+        ChangeNotifierProvider(create: (context) => AccountProvider()),
       ],
       child: const MyApp(),
     ),

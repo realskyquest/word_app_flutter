@@ -1,9 +1,6 @@
+import 'dart:io';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
-
-import 'dart:io';
-import 'package:pocketbase/pocketbase.dart';
-import '../provider/pocketbase_provider.dart';
 
 Future<bool> isServerRunningUtil() async {
   bool serverIsRunning = false;

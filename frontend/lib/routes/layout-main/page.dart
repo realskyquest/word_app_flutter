@@ -81,10 +81,15 @@ Column _cardItems(
           'Click to make new word',
         ),
       ),
-      WordDisplay(word: addProvider.word),
+      wordDisplay(themeProvider, addProvider.word),
       const Gap(5),
       _cardButtons(
-          context, themeProvider, addProvider, historyProvider, savesProvider),
+        context,
+        themeProvider,
+        addProvider,
+        historyProvider,
+        savesProvider,
+      ),
       const Gap(5),
     ],
   );
@@ -143,7 +148,7 @@ Row _cardButtons(
               ),
             );
 
-            logger.d('Make new word first!');
+            logger.t('Make new word first!');
           }
         },
         child: Text(

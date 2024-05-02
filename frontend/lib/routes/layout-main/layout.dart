@@ -11,9 +11,9 @@ import 'package:word_app/provider/theme_provider.dart';
 import 'package:word_app/provider/bottom_navigation_bar_provider.dart';
 
 class LayoutMain extends StatelessWidget {
-  const LayoutMain({super.key, required this.page});
+  const LayoutMain({super.key, required this.slot});
 
-  final Widget page;
+  final Widget slot;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class LayoutMain extends StatelessWidget {
 
         return Scaffold(
           appBar: _rootAppBar(context, themeProvider),
-          body: page,
+          body: slot,
           bottomNavigationBar: Container(
             color: appColors.secondaryContainer,
             child: Column(
